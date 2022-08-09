@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <!-- N number of image topics can be placed into this list -->
+  <arg name="sensors" default="[stereo_pair]"/>
+
+  <arg name="sensor_topics" default="$(find data_capturing)/config/sensor_topics.yaml"/>
+  
+  <!-- <group ns="platform"> -->
+  <node name="capturing_node" pkg="data_capturing" type="stereo_capturing_node.py" output="screen">
+
+    <rosparam param="sensors" subst_value="True">$(arg sensors)</rosparam> 
+
+     <!-- Sensor Topics -->
+    <rosparam file="$(arg sensor_topics)" command="load"/>
+  </node>
+</launch>

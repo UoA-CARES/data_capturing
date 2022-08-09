@@ -1,0 +1,3 @@
+# Stereo Pair topic Names == "stereo_pair"
+stereo_pair/left_image_topic: "left/image_color" 
+stereo_pair/right_image_topic: "right/image_color" 
